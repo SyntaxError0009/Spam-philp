@@ -1,92 +1,146 @@
 const clients = []
+
 const { Client } = require('discord.js-selfbot-v13')
+
 try{
-const express = require("express");
-const app = express();
 
-app.listen(() => console.log("Server started"));
+  const express = require("express");
 
-app.get('/', (req, res) => {
-  res.send('Best By Kartal!')
-})
+  const app = express();
 
+  app.listen(() => console.log("Server started"));
 
-  
+  app.get('/', (req, res) => {
+
+    res.send('Hama Is Here')
+
+  })
+
   const fs = require('fs');
 
-// Replace "example.txt" with the name of your file
-const filename = './token.txt';
+  // Replace "example.txt" with the name of your file
 
-// Read the file
-fs.readFile(filename, 'utf8',async (err, data) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
+  const filename = './token.txt';
 
-  // Split the data by lines
-const lines = data.split('\n');
-// Read each line
-for (const line of lines) {
-const client = new Client({
-  checkUpdate: false,
-})
-///
-client.on('ready', async () => {
+  // Read the file
 
-console.log(`${client.user.tag} is Ready!`)
-  
-  
+  fs.readFile(filename, 'utf8', async (err, data) => {
 
-const channel = await client.channels.cache.get("1195329011631529995")
-let chats = [
-  `The greatest glory in living lies not in never falling, but in rising every time we fall.`,
-  `The way to get started is to quit talking and begin doing.`,
-  `Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.`,
-  `If life were predictable it would cease to be life, and be without flavor.`,
-  `Life is what happens when you're busy making other plans.`,
-  `Whoever is happy will make others happy too.`,
-  `When you reach the end of your rope, tie a knot in it and hang on.`,
-  `It is during our darkest moments that we must focus to see the light.`,
-  `Never let the fear of striking out keep you from playing the game.`,
-  `Life is either a daring adventure or nothing at all.`,
-  `The only impossible journey is the one you never begin.`,
-  `The purpose of our lives is to be happy.`,
-  `Life is what happens when you're busy making other plans.`,
-  `I never dreamed about success, I worked for it.`,
-  `Try not to become a man of success. Rather become a man of value.`,
-  `I failed my way to success`,
-  `You miss 100% of the shots you don't take.`,
-  `Dreaming, after all, is a form of planning.`,
-  `I would rather die of passion than of boredom.`,
-  `If you're offered a seat on a rocket ship, don't ask what seat! Just get on`,
-  `You may be disappointed if you fail, but you are doomed if you don't try`
-]  
+    if (err) {
 
+      console.error(err);
 
-setInterval(() => {
+      return;
+
+    }
+
+    // Split the data by lines
+
+    const lines = data.split('\n');
+
+    // Read each line
+
+    for (const line of lines) {
+
+      const client = new Client({
+
+        checkUpdate: false,
+
+      });
+
+      ///
+    client.on('ready', async () => {
+
+        console.log(`${client.user.tag} is Ready!`);
+
+        
+
+        const channel = await client.channels.cache.get("1234133893515448395");
+
+        let chats = [`نیتف/لیکس بەرد/ەستە 
+
+نیت/فلیکس ١ مانگی 800k <:Netflix:1234499528762200204> 
+
+نێت/فلیکس ٣ مانگی  2m <:Netflix:1234499528762200204> 
+
+نیتف/لیکس ١ سالی  4m <:Netflix:1234499528762200204> 
+
+لە/سەر زە/مان /و لە/سەر ئم/یلی خ/ۆت
+
+<@&1234133891120631851>`,
+
+                    `ب/وت بەردەس/تە
+
+<@&1234133891120631851>`,
+
+                    `**__نی/ترۆ گەی/مینگ گی/فت بەرد/ەستە__**
+
+**__ <@&1234133891120631851> __**`,
+
+                    `تی/مپڵە$یت بەر-دەستە!-
+
+<@&1234133891120631851>`,
+
+                    `ســــێ/رڤــەر ڪــۆ/پــی دەڪـ/ـــەم بــ/ــێ ڕ/ۆڵ
+
+<#1234133893515448392> 
+
+<@&1234133891120631851>`,
+
+                    `ەکا/ونتی/دیس/
+
+                  <@&1234133891120631851>  کۆرد/ بەردەستە`,
+
+                    `وسی/بەردەستە/فاست/ <@&1234133891120631851> بەی/فاب`,
+
+                    `نیتف/لیکس بەرد/ەستە 
+
+نیت/فلیکس ١ مانگی 800k <:Netflix:1234499528762200204> 
+
+نێت/فلیکس ٣ مانگی  2m <:Netflix:1234499528762200204> 
+
+نیتف/لیکس ١ سالی  4m <:Netflix:1234499528762200204> 
+
+لە/سەر زە/مان /و لە/سەر ئم/یلی خ/ۆت
+
+<@&1234133891120631851>` ];
+          setInterval(() => {
+
 const msg = chats[Math.floor(Math.random()*chats.length)]
+
 setTimeout(() => {
+
 channel.send(msg)
-}, 300)
-}, 5000)
+
+}, 1200000)
+}, 1200000)
 
 })
 
-      client.login(process.env.token).catch(() => {
-  console.log(`token is invalid`)
+  client.login('').catch(() => {
+
+  console.log(`token Xalata hay kere hamu Dwnyat ba qunt`)
+
 })
 
 }
 
   
+
 })
 
 } catch (err) {
+
   if(err.message.startsWith('401: Unauthorized')) {
+
   process.exit()
+
 }
+
 if(err.message.startsWith('The operation was aborted.')) {
+
     process.exit()
+
 }
+
 }
