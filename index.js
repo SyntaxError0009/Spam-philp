@@ -117,7 +117,7 @@ channel.send(msg)
 
 })
 
-  client.login('').catch(() => {
+  client.login(process.login.env).catch(() => {
 
   console.log(`token Xalata hay kere hamu Dwnyat ba qunt`)
 
